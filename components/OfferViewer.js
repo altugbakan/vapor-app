@@ -65,19 +65,23 @@ const OfferViewer = ({ offer, signature }) => {
         <div className="flex-column">
             <h2>{offer.from} &rarr; {offer.to}</h2>
             <div className="flex-row">
-                {
-                    offer.toSend.map((item) => {
-                        return (<ItemViewer item={item} key={item.value} />)
-                    })
-                }
+                <div className="flex-column">
+                    {
+                        offer.toSend.map((item) => {
+                            return (<ItemViewer item={item} key={item.value} />)
+                        })
+                    }
+                </div>
                 <div style={{ marginLeft: "20px", marginRight: "20px" }}>
                     &rarr;
                 </div>
-                {
-                    offer.toReceive.map((item) => {
-                        return (<ItemViewer item={item} key={item.value} />)
-                    })
-                }
+                <div className="flex-column">
+                    {
+                        offer.toReceive.map((item) => {
+                            return (<ItemViewer item={item} key={item.value} />)
+                        })
+                    }
+                </div>
             </div>
             <button className="button" onClick={acceptOffer} style={{ marginTop: "10px" }}>Accept Offer</button>
         </div>

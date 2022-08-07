@@ -35,7 +35,7 @@ const Offers = () => {
                         offers.length === 0 ?
                             <h2>There are no offers that you can accept!</h2>
                             :
-                            <ul>
+                            <ul className="flex-column">
                                 {
                                     offers.map((offer) => {
                                         return (
